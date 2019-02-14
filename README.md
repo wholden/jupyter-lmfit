@@ -12,6 +12,24 @@ Current features:
 Hopeful future upgrades:
 - [lmfit](https://lmfit.github.io/lmfit-py/) makes it easy to set parameter contraints relative to one another (e.g. peak1_height = 2 * peak2_height) using the 'expr' keyword in the parameters.  This feature has not yet been implemented.
 
+# Installation
+```
+git clone https://github.com/wholden/jupyter-lmfit.git
+cd jupyter-lmfit
+python setup.py install
+```
+# Usage
+```python
+# from jupyter notebook
+from ipylmfit import LmfitWidget
+%matplotlib widget
+import matplotlib.pyplot as plt
+plt.ioff()
+x, y = YourData
+fitter = LmfitWidget(y, x)
+fitter.render()
+```
+
 # Interface
 ![Demo Screenshot](../assets/ipylmfit_interface.png?raw=true)
 
