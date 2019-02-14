@@ -17,3 +17,6 @@ Hopeful future upgrades:
 
 # Demo Animation
 ![Demo Animation](../assets/ipylmfit_demo.gif?raw=true)
+
+## Acknowledgement
+This project is based on the interface currently in lmfit/ui developed by https://gist.github.com/danielballan.
