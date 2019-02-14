@@ -1,9 +1,8 @@
-import numpy as np
+from IPython.display import HTML
 import ipywidgets as widgets
-from IPython.display import clear_output, HTML
-from IPython import get_ipython
-import matplotlib.pyplot as plt
 import lmfit
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def _get_all_models():
@@ -12,7 +11,10 @@ def _get_all_models():
         if sc.__module__ == 'lmfit.models':
             models[sc.__name__] = sc
     models.pop('PolynomialModel')  # PolynomialModel not supported yet, requires a degree to be specified
-    models.pop('SplitLorentzianModel')  # Throws error
+    try:
+        models.pop('SplitLorentzianModel')  # Throws error
+    except KeyError:  # Model missing in current pip version of lmfit
+        pass
     return models
 
 
